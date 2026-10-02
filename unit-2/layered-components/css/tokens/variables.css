@@ -1,0 +1,14 @@
+/* Non-color tokens: spacing, typography, borders, shadows.
+   These values should be referenced by every other layer. */
+:root {
+    /* TODO: Define spacing, font, radius, and shadow tokens here */
+
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 2rem;
+
+    --font-family: Arial, sans-serif;
+
+    --border-radius: 0.75rem;
+    --shadow-card: 0 2px 8px rgb(0 0 0 / 8%);
+}
