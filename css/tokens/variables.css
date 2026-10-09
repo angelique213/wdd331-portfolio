@@ -1,0 +1,13 @@
+:root {
+    /* Spacing */
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 2rem;
+
+    /* Typography */
+    --font-family: 'Arial', sans-serif;
+    --font-size-base: 1rem;
+
+    /* Borders */
+    --border-radius: 0.5rem;
+}
