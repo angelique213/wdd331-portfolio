@@ -4,6 +4,11 @@
 /* TODO: Style the navigation */
 
 .site-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
     background-color: var(--color-primary);
     padding: var(--spacing-md) var(--spacing-lg);
 

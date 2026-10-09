@@ -37,3 +37,8 @@
         cursor: not-allowed;
     }
 }
+.button-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+}
