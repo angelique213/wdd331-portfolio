@@ -1,24 +1,39 @@
-/* Assignment cards */
+
+/* Assignment Cards */
 .assignment-card {
-    background-color: #ffffff;
+    background-color: var(--color-surface);
     border: 1px solid var(--color-border);
-    border-radius: var(--border-radius);
-    padding: var(--spacing-md);
-    transition: box-shadow 0.2s ease;
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-sm);
+    transition:
+        transform var(--transition-base),
+        box-shadow var(--transition-base),
+        border-color var(--transition-base);
 }
 
+/* Card Hover Effect */
 .assignment-card:hover {
-    box-shadow: 0 4px 12px rgb(0 0 0 / 10%);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--color-accent);
 }
 
+/* Assignment Links */
 .assignment-card a {
     display: block;
-    color: var(--color-primary);
-    font-weight: bold;
+    color: var(--color-link);
+    font-weight: 600;
     text-decoration: none;
 }
 
+/* Link Hover Effect */
 .assignment-card a:hover {
-    color: var(--color-hover);
+    color: var(--color-link-hover);
     text-decoration: underline;
+}
+
+/* Keyboard Accessibility */
+.assignment-card:focus-within {
+    border-color: var(--color-accent);
 }
