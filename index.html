@@ -6,21 +6,104 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Angelique Legaspi – Portfolio</title>
+
+    <script src="js/theme-preference.js"></script>
     <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
     <header>
-        <h1>Angelique Legaspi</h1>
-        <p>
-            Welcome to my WDD 331R Advanced CSS portfolio.
-            This site contains my work and assignments
-            throughout the semester.
-        </p>
+        <div class="header-top">
+            <h1>Angelique Legaspi</h1>
+
+            <details class="theme-menu">
+                <summary class="theme-control">
+                    <span class="visually-hidden">
+                        Color scheme
+                    </span>
+                </summary>
+
+                <div class="theme-extra"
+                     role="group"
+                     aria-label="Choose color scheme">
+
+                    <label class="theme-control theme-pick"
+                           data-theme-pick="light">
+                        <input
+                            name="theme-preference"
+                            type="radio"
+                            value="light">
+
+                        <span aria-hidden="true">
+                            &#9788;&#65039;
+                        </span>
+
+                        <span class="visually-hidden">
+                            Light
+                        </span>
+                    </label>
+
+                    <label class="theme-control theme-pick"
+                           data-theme-pick="system">
+                        <input
+                            name="theme-preference"
+                            type="radio"
+                            value="system"
+                            checked>
+
+                        <span aria-hidden="true">
+                            &#9881;&#65039;
+                        </span>
+
+                        <span class="visually-hidden">
+                            System default
+                        </span>
+                    </label>
+
+                    <label class="theme-control theme-pick"
+                           data-theme-pick="dark">
+                        <input
+                            name="theme-preference"
+                            type="radio"
+                            value="dark">
+
+                        <span aria-hidden="true">
+                            &#127766;
+                        </span>
+
+                        <span class="visually-hidden">
+                            Dark
+                        </span>
+                    </label>
+                </div>
+            </details>
+        </div>
+
+        <!-- Hero Section -->
+        <div class="hero">
+            <p class="hero-label">
+                WDD 331R · ADVANCED CSS
+            </p>
+
+            <h2>Welcome to My Portfolio</h2>
+
+            <p class="hero-description">
+                Explore my projects and assignments as I learn
+                advanced CSS, responsive layouts, and modern
+                web design techniques.
+            </p>
+
+            <a href="#assignments" class="hero-button">
+                Explore My Work →
+            </a>
+        </div>
     </header>
 
+    <!-- Main Content -->
     <main>
-        <nav aria-label="Course assignments">
+        <nav id="assignments"
+             aria-label="Course assignments">
+
             <h2>Assignments</h2>
 
             <ul>
@@ -38,6 +121,12 @@
             </ul>
         </nav>
     </main>
-</body>
 
+    <!-- Footer -->
+    <footer class="site-footer">
+        <p>&copy; 2026 Angelique Legaspi</p>
+        <p>WDD 331R | Advanced CSS Portfolio</p>
+    </footer>
+
+</body>
 </html>

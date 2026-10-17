@@ -1,16 +1,42 @@
+
+/* Base Page Styles */
 body {
-    font-family: var(--font-family);
+    font-family: var(--font-family-sans);
     font-size: var(--font-size-base);
     color: var(--color-text);
-    background-color: var(--color-background);
+    background-color: var(--color-bg);
     line-height: 1.6;
-    padding: clamp(1rem, 2vw, 2rem);
 }
 
+/* Headings */
+h1, h2, h3 {
+    color: var(--color-text);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+}
+
+h1 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+}
+
+h2 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 600;
+}
+
+/* Links */
 a {
-    color: var(--color-primary);
+    color: var(--color-link);
+    text-decoration: none;
+    transition: color var(--transition-base);
 }
 
 a:hover {
-    color: var(--color-hover);
+    color: var(--color-link-hover);
+}
+
+a:focus-visible {
+    outline: var(--outline-width) solid var(--color-accent);
+    outline-offset: 3px;
 }
