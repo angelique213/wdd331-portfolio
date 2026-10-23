@@ -1,78 +1,76 @@
-
-/**
- * Theme preference: restore on load (before paint) and persist on change.
- * Load in <head> WITHOUT defer or async.
- */
 (() => {
-    const ALLOWED = new Set(['light', 'system', 'dark']);
-    const id = 'theme-preference-sync';
+    const STORAGE_KEY = "theme-preference";
+    const ALLOWED = ["light", "system", "dark"];
 
-    let container = document.getElementById(id);
-    if (!container) {
-        container = document.createElement('div');
-        container.id = id;
-        container.hidden = true;
-        container.setAttribute('aria-hidden', 'true');
+    // Read the saved preference.
+    let savedTheme = "system";
 
-        ['light', 'system', 'dark'].forEach((v) => {
-            const input = document.createElement('input');
-            input.type = 'radio';
-            input.name = 'theme-preference';
-            input.value = v;
-            if (v === 'system') {
-                input.checked = true;
-            }
-            container.appendChild(input);
-        });
-
-        const mount = document.body ?? document.head;
-        if (mount) {
-            mount.appendChild(container);
-        }
-    }
-
-    let stored = null;
     try {
-        stored = localStorage.getItem('theme-preference');
+        const stored = localStorage.getItem(STORAGE_KEY);
+
+        if (ALLOWED.includes(stored)) {
+            savedTheme = stored;
+        }
     } catch {
-        /* storage may be disabled */
+        // Continue with system mode if storage is unavailable.
     }
 
-    const value = ALLOWED.has(stored) ? stored : 'system';
-    const input = container.querySelector(
-        'input[value="' + value + '"]'
-    );
-    if (input) {
-        input.checked = true;
-    }
+    // Apply the theme immediately.
+    document.documentElement.dataset.theme = savedTheme;
 
-    document.addEventListener('DOMContentLoaded', () => {
-        const visibleInput = document.querySelector(
-            '.theme-menu input[value="' + value + '"]'
+    // Update all visible theme controls.
+    function syncThemeControls(theme) {
+        const inputs = document.querySelectorAll(
+            '.theme-menu input[name="theme-preference"]'
         );
 
-        if (visibleInput) {
-            visibleInput.checked = true;
+        inputs.forEach((input) => {
+            input.checked = input.value === theme;
+        });
+    }
+
+    // Change the theme and save the selection.
+    function setTheme(theme) {
+        if (!ALLOWED.includes(theme)) {
+            return;
         }
-    });
 
-    document.addEventListener('change', (e) => {
-        if (e.target.name === 'theme-preference') {
-            const selectedTheme = e.target.value;
+        document.documentElement.dataset.theme = theme;
 
-            const hiddenInput = container.querySelector(
-                'input[value="' + selectedTheme + '"]'
-            );
+        syncThemeControls(theme);
 
-            if (hiddenInput) {
-                hiddenInput.checked = true;
-            }
+        try {
+            localStorage.setItem(STORAGE_KEY, theme);
+        } catch {
+            // Theme still works if storage is unavailable.
+        }
+    }
 
-            try {
-                localStorage.setItem('theme-preference', selectedTheme);
-            } catch {
-                /* storage may be disabled */
-            }
+    // Restore the selected radio button.
+    function initializeTheme() {
+        syncThemeControls(savedTheme);
+    }
+
+    if (document.readyState === "loading") {
+        document.addEventListener(
+            "DOMContentLoaded",
+            initializeTheme
+        );
+    } else {
+        initializeTheme();
+    }
+
+    // Listen for user changes.
+    document.addEventListener("change", (event) => {
+        const input = event.target;
+
+        if (
+            input instanceof HTMLInputElement &&
+            input.matches(
+                '.theme-menu input[name="theme-preference"]'
+            )
+        ) {
+            setTheme(input.value);
         }
     });
 })();

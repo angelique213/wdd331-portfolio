@@ -1,3 +1,5 @@
+
+/* Theme menu */
 details.theme-menu {
     position: relative;
     display: inline-block;
@@ -49,6 +51,7 @@ details.theme-menu {
         }
     }
 
+    /* Theme buttons */
     .theme-control {
         box-sizing: border-box;
         display: inline-flex;
@@ -65,6 +68,7 @@ details.theme-menu {
         border: 1px solid var(--theme-toggle-border);
         border-radius: var(--radius-sm);
         cursor: pointer;
+
         transition:
             background-color var(--transition-base),
             border-color var(--transition-base);
@@ -75,6 +79,7 @@ details.theme-menu {
         }
     }
 
+    /* Dropdown */
     > .theme-extra {
         position: absolute;
         z-index: 50;
@@ -99,6 +104,7 @@ details.theme-menu {
         animation: theme-extra-reveal 0.2s ease-out;
     }
 
+    /* Radio buttons */
     .theme-pick {
         position: relative;
 
@@ -118,7 +124,8 @@ details.theme-menu {
     }
 }
 
-html:has(input[name='theme-preference'][value='light']:checked) {
+/* Light mode */
+html[data-theme="light"] {
     & details.theme-menu > summary.theme-control::before {
         content: '\2600\FE0F';
     }
@@ -128,7 +135,8 @@ html:has(input[name='theme-preference'][value='light']:checked) {
     }
 }
 
-html:has(input[name='theme-preference'][value='dark']:checked) {
+/* Dark mode */
+html[data-theme="dark"] {
     & details.theme-menu > summary.theme-control::before {
         content: '\1F316';
     }
@@ -138,12 +146,14 @@ html:has(input[name='theme-preference'][value='dark']:checked) {
     }
 }
 
-html:has(input[name='theme-preference'][value='system']:checked) {
+/* System mode */
+html[data-theme="system"] {
     & details.theme-menu .theme-pick[data-theme-pick='system'] {
         display: none;
     }
 }
 
+/* Dropdown animation */
 @keyframes theme-extra-reveal {
     from {
         transform: translateY(-0.4rem);
@@ -151,5 +161,16 @@ html:has(input[name='theme-preference'][value='system']:checked) {
 
     to {
         transform: translateY(0);
+    }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    details.theme-menu[open] > .theme-extra {
+        animation: none;
+    }
+
+    details.theme-menu .theme-control {
+        transition: none;
     }
 }

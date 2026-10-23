@@ -1,0 +1,271 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Visual Effects Showcase</title>
+
+    <script src="../../js/theme-preference.js" defer></script>
+    <link rel="stylesheet" href="../../css/main.css">
+</head>
+
+<body class="effects-page">
+
+    <!-- Navigation -->
+    <nav class="site-nav" aria-label="Main navigation">
+        <a href="../../index.html">&larr; Home</a>
+
+        <ul>
+            <li>
+                <a href="#gallery">Gallery</a>
+            </li>
+            <li>
+                <a href="#effects">Effects</a>
+            </li>
+            <li>
+                <a href="#about">About</a>
+            </li>
+        </ul>
+
+        <!-- Theme Toggle -->
+        <details class="theme-menu">
+            <summary class="theme-control">
+                <span class="visually-hidden">
+                    Color scheme
+                </span>
+            </summary>
+
+            <div class="theme-extra"
+                 role="group"
+                 aria-label="Choose color scheme">
+
+                <!-- Light Mode -->
+                <label class="theme-control theme-pick"
+                       data-theme-pick="light">
+                    <input name="theme-preference"
+                           type="radio"
+                           value="light">
+
+                    <span aria-hidden="true">
+                        &#9788;&#65039;
+                    </span>
+
+                    <span class="visually-hidden">
+                        Light
+                    </span>
+                </label>
+
+                <!-- System Mode -->
+                <label class="theme-control theme-pick"
+                       data-theme-pick="system">
+                    <input name="theme-preference"
+                           type="radio"
+                           value="system"
+                           checked>
+
+                    <span aria-hidden="true">
+                        &#9881;&#65039;
+                    </span>
+
+                    <span class="visually-hidden">
+                        System default
+                    </span>
+                </label>
+
+                <!-- Dark Mode -->
+                <label class="theme-control theme-pick"
+                       data-theme-pick="dark">
+                    <input name="theme-preference"
+                           type="radio"
+                           value="dark">
+
+                    <span aria-hidden="true">
+                        &#127766;
+                    </span>
+
+                    <span class="visually-hidden">
+                        Dark
+                    </span>
+                </label>
+            </div>
+        </details>
+    </nav>
+
+    <!-- Hero -->
+    <header class="hero">
+        <img
+            class="hero-image"
+            src="https://picsum.photos/seed/hero-effects/1200/500"
+            alt="Landscape background for the hero section">
+
+        <div class="hero-content">
+            <h1>Visual Effects Showcase</h1>
+            <p>
+                Shadows, gradients, and filters
+                working together.
+            </p>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- Gallery: Elevation Cards -->
+        <section class="card-section" id="gallery">
+            <h2>Elevation Cards</h2>
+
+            <div class="cards">
+
+                <!-- Card 1 -->
+                <article class="card">
+                    <img
+                        class="card-image"
+                        src="https://picsum.photos/seed/card-1/400/250"
+                        alt="Landscape for layered shadow example">
+
+                    <div class="card-body">
+                        <h3>Layered Shadows</h3>
+                        <p>
+                            Multiple shadow layers create
+                            realistic depth that changes
+                            on hover.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Card 2 -->
+                <article class="card">
+                    <img
+                        class="card-image"
+                        src="https://picsum.photos/seed/card-2/400/250"
+                        alt="Landscape for gradient example">
+
+                    <div class="card-body">
+                        <h3>Gradient Surfaces</h3>
+                        <p>
+                            A subtle gradient adds dimension
+                            without distracting from content.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Card 3 -->
+                <article class="card">
+                    <img
+                        class="card-image"
+                        src="https://picsum.photos/seed/card-3/400/250"
+                        alt="Landscape for image filter example">
+
+                    <div class="card-body">
+                        <h3>Filtered Images</h3>
+                        <p>
+                            A grayscale filter changes to
+                            full color when hovering.
+                        </p>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Frosted Glass -->
+        <section class="glass-section">
+            <div class="glass-background">
+                <img
+                    class="glass-bg-image"
+                    src="https://picsum.photos/seed/glass-bg/1200/400"
+                    alt="Landscape behind the frosted glass panel">
+            </div>
+
+            <div class="glass-panel">
+                <h2>Frosted Glass</h2>
+                <p>
+                    This panel uses backdrop-filter
+                    to blur and saturate the image behind it.
+                    The text stays sharp while the
+                    background becomes soft.
+                </p>
+            </div>
+        </section>
+
+        <!-- Icon Shadows -->
+        <section class="icon-section">
+            <h2>Drop Shadow on Transparent Images</h2>
+
+            <p>
+                These icons use drop-shadow() so
+                the shadow follows the actual icon shape.
+            </p>
+
+            <div class="icon-row">
+                <img
+                    class="icon-item"
+                    src="https://cdn.jsdelivr.net/npm/@tabler/icons@2.47.0/icons/heart.svg"
+                    alt="Heart icon">
+
+                <img
+                    class="icon-item"
+                    src="https://cdn.jsdelivr.net/npm/@tabler/icons@2.47.0/icons/star.svg"
+                    alt="Star icon">
+
+                <img
+                    class="icon-item"
+                    src="https://cdn.jsdelivr.net/npm/@tabler/icons@2.47.0/icons/bookmark.svg"
+                    alt="Bookmark icon">
+
+                <img
+                    class="icon-item"
+                    src="https://cdn.jsdelivr.net/npm/@tabler/icons@2.47.0/icons/message-circle.svg"
+                    alt="Message icon">
+            </div>
+        </section>
+
+        <!-- Effects: CSS Blend Modes -->
+        <section class="blend-section" id="effects">
+            <h2>CSS Blend Modes</h2>
+
+            <p>
+                Blend modes combine colors and images
+                to create visual effects without
+                editing the original image.
+            </p>
+
+            <div class="blend-demo">
+                <h3>Background Blend Mode</h3>
+                <p>
+                    This example uses multiply to blend
+                    a color gradient with a background image.
+                </p>
+            </div>
+        </section>
+
+        <!-- About -->
+        <section class="about-section" id="about">
+            <h2>About This Page</h2>
+
+            <p>
+                This page is part of my WDD 331R
+                Advanced CSS portfolio. It demonstrates
+                shadows, gradients, image filters,
+                frosted glass, and CSS blend modes.
+            </p>
+
+            <p>
+                I used CSS variables, responsive layouts,
+                and light and dark mode to create a
+                consistent design across my portfolio.
+            </p>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <p>&copy; 2026 Angelique Legaspi</p>
+        <p>WDD 331R | Advanced CSS Portfolio</p>
+    </footer>
+
+</body>
+</html>
