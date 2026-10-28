@@ -8,13 +8,15 @@
 
 This repository is my portfolio for WDD 331R: Advanced CSS. Each week, I add new pages and styles as I work through the course assignments.
 
-The site deploys automatically to GitHub Pages when I push changes to the main branch.
 
 ## Pages
 
 - [Portfolio Home](https://angelique213.github.io/wdd331-portfolio/)
 - [Unit 1 - Custom Properties and Nesting](unit-1/custom-properties/index.html)
 - [Unit 2 - Layered Components](unit-2/layered-components/index.html)
+- [Unit 4 - Editorial Grid Layout](unit-4/grid-layouts/editorial.html)
+- [Unit 4 - Responsive Card Grid](unit-4/grid-layouts/cards.html)
+
 
 ## CSS Architecture
 

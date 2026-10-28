@@ -5,6 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Angelique Legaspi – Portfolio</title>
 
     <script src="js/theme-preference.js"></script>
@@ -13,71 +14,20 @@
 
 <body>
     <header>
+
         <div class="header-top">
             <h1>Angelique Legaspi</h1>
-
-            <details class="theme-menu">
-                <summary class="theme-control">
-                    <span class="visually-hidden">
-                        Color scheme
-                    </span>
-                </summary>
-
-                <div class="theme-extra"
-                     role="group"
-                     aria-label="Choose color scheme">
-
-                    <label class="theme-control theme-pick"
-                           data-theme-pick="light">
-                        <input
-                            name="theme-preference"
-                            type="radio"
-                            value="light">
-
-                        <span aria-hidden="true">
-                            &#9788;&#65039;
-                        </span>
-
-                        <span class="visually-hidden">
-                            Light
-                        </span>
-                    </label>
-
-                    <label class="theme-control theme-pick"
-                           data-theme-pick="system">
-                        <input
-                            name="theme-preference"
-                            type="radio"
-                            value="system"
-                            checked>
-
-                        <span aria-hidden="true">
-                            &#9881;&#65039;
-                        </span>
-
-                        <span class="visually-hidden">
-                            System default
-                        </span>
-                    </label>
-
-                    <label class="theme-control theme-pick"
-                           data-theme-pick="dark">
-                        <input
-                            name="theme-preference"
-                            type="radio"
-                            value="dark">
-
-                        <span aria-hidden="true">
-                            &#127766;
-                        </span>
-
-                        <span class="visually-hidden">
-                            Dark
-                        </span>
-                    </label>
-                </div>
-            </details>
         </div>
+
+        <!-- Light and dark toggle -->
+        <button
+            class="simple-theme-toggle"
+            type="button"
+            aria-label="Switch theme"
+            aria-pressed="false"
+        >
+            <span class="theme-icon" aria-hidden="true">🌙</span>
+        </button>
 
         <!-- Hero Section -->
         <div class="hero">
@@ -97,31 +47,141 @@
 
     <!-- Main Content -->
     <main>
-        <nav id="assignments"
-             aria-label="Course assignments">
+        <section id="assignments" aria-labelledby="assignments-title">
 
-            <h2>Assignments</h2>
+            <!-- Section heading -->
+            <div class="assignments-heading">
+                <p class="section-label">MY COURSEWORK</p>
 
-            <ul>
-                <li class="assignment-card">
-                    <a href="unit-1/custom-properties/index.html">
-                        Custom Properties and Nesting
-                    </a>
-                </li>
+                <h2 id="assignments-title">Assignments</h2>
 
-                <li class="assignment-card">
-                    <a href="unit-2/layered-components/index.html">
-                        Layered Components
-                    </a>
-                </li>
-                <li class="assignment-card">
-                    <a href="unit-3/visual-effects/index.html">
-                        U03 Visual Effects
-                    </a>
-                </li>
-                                
-            </ul>
-        </nav>
+                <p class="section-description">
+                    A collection of my work exploring modern CSS,
+                    creative design, and responsive web layouts.
+                </p>
+            </div>
+
+            <!-- Assignment cards -->
+            <div class="assignments-grid">
+
+                <!-- Unit 1 -->
+                <article class="assignment-card">
+
+                    <div class="assignment-card-header">
+                        <span class="unit-label">UNIT 01</span>
+                        <span class="unit-icon" aria-hidden="true">⌘</span>
+                    </div>
+
+                    <h3>CSS Foundations</h3>
+
+                    <p class="assignment-caption">
+                        Custom Properties &amp; Nesting
+                    </p>
+
+                    <p class="assignment-description">
+                        Learn how to create reusable styles using
+                        CSS variables, design tokens, nesting,
+                        and responsive techniques.
+                    </p>
+
+                    <div class="assignment-links">
+                        <a href="unit-1/custom-properties/index.html">
+                            View Unit 1
+                        </a>
+                    </div>
+
+                </article>
+
+                <!-- Unit 2 -->
+                <article class="assignment-card">
+
+                    <div class="assignment-card-header">
+                        <span class="unit-label">UNIT 02</span>
+                        <span class="unit-icon" aria-hidden="true">▤</span>
+                    </div>
+
+                    <h3>CSS Architecture</h3>
+
+                    <p class="assignment-caption">
+                        Layers &amp; Components
+                    </p>
+
+                    <p class="assignment-description">
+                        Organize styles into a clean and
+                        maintainable system using CSS layers
+                        and reusable components.
+                    </p>
+
+                    <div class="assignment-links">
+                        <a href="unit-2/layered-components/index.html">
+                            View Unit 2
+                        </a>
+                    </div>
+
+                </article>
+
+                <!-- Unit 3 -->
+                <article class="assignment-card">
+
+                    <div class="assignment-card-header">
+                        <span class="unit-label">UNIT 03</span>
+                        <span class="unit-icon" aria-hidden="true">✦</span>
+                    </div>
+
+                    <h3>Visual Effects</h3>
+
+                    <p class="assignment-caption">
+                        Shadows, Filters &amp; Animation
+                    </p>
+
+                    <p class="assignment-description">
+                        Explore modern visual effects using
+                        shadows, gradients, filters,
+                        frosted glass, and animations.
+                    </p>
+
+                    <div class="assignment-links">
+                        <a href="unit-3/visual-effects/index.html">
+                            View Unit 3
+                        </a>
+                    </div>
+
+                </article>
+
+                <!-- Unit 4 -->
+                <article class="assignment-card">
+
+                    <div class="assignment-card-header">
+                        <span class="unit-label">UNIT 04</span>
+                        <span class="unit-icon" aria-hidden="true">▦</span>
+                    </div>
+
+                    <h3>Responsive Layouts</h3>
+
+                    <p class="assignment-caption">
+                        CSS Grid &amp; Flexible Cards
+                    </p>
+
+                    <p class="assignment-description">
+                        Build responsive layouts using named
+                        grid areas, auto-fit, minmax(),
+                        and flexible article cards.
+                    </p>
+
+                    <div class="assignment-links">
+                        <a href="unit-4/grid-layouts/editorial.html">
+                            Editorial Layout
+                        </a>
+
+                        <a href="unit-4/grid-layouts/cards.html">
+                            Card Grid
+                        </a>
+                    </div>
+
+                </article>
+
+            </div>
+        </section>
     </main>
 
     <!-- Footer -->
