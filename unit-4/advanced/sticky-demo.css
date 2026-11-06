@@ -1,0 +1,74 @@
+/* Page styling */
+
+body {
+    margin: 0;
+    background: var(--color-bg);
+    color: var(--color-text);
+}
+
+/* Header */
+
+.page-header {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.page-header h1 {
+    color: var(--color-accent);
+}
+
+.page-header a {
+    color: var(--color-accent);
+}
+
+/* Main content */
+
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Sticky navigation */
+
+.sticky-bar {
+    position: sticky;
+    top: 20px;
+    z-index: 10;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+
+    padding: 20px;
+    background: var(--color-accent);
+    color: var(--color-accent-text);
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
+}
+
+/* Content sections */
+
+.content-section {
+    min-height: 250px;
+    margin-top: 24px;
+    padding: 30px;
+
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+}
+
+.content-section h2 {
+    color: var(--color-accent);
+}
+
+.content-section p {
+    line-height: 1.8;
+}
+/* I tried overflow: hidden, but my sticky navigation stopped working.
+   I used overflow: visible to fix it. */
+.overflow-test {
+    overflow: visible;
+}

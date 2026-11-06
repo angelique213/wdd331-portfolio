@@ -1,0 +1,120 @@
+/* Page layout */
+
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-family-sans);
+}
+
+/* Header */
+
+header {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+header h1 {
+    color: var(--color-accent);
+}
+
+header a {
+    color: var(--color-accent);
+}
+
+/* Main content */
+
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+main > h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Two different layout areas */
+
+.demo-layout {
+    display: grid;
+    grid-template-columns: 250px minmax(0, 1fr);
+    gap: 24px;
+    align-items: start;
+}
+
+/* Narrow and wide sections */
+
+.narrow-container,
+.wide-container {
+    min-width: 0;
+}
+
+.narrow-container h3,
+.wide-container h3 {
+    color: var(--color-accent);
+}
+
+/* Component wrapper */
+
+.component-wrapper {
+    container-type: inline-size;
+    container-name: feature;
+}
+
+/* Feature card */
+
+.feature-card {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    padding: 20px;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 16px;
+    box-shadow: var(--shadow-sm);
+}
+
+/* Card image */
+
+.feature-card img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Card text */
+
+.feature-content h4 {
+    margin: 0 0 10px;
+    color: var(--color-accent);
+    font-size: 20px;
+}
+
+.feature-content p {
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* Show the image and text side by side when there is enough space */
+
+@container feature (min-width: 450px) {
+    .feature-card {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .feature-card img {
+        width: 40%;
+        flex-shrink: 0;
+    }
+
+    .feature-content {
+        flex: 1;
+    }
+}

@@ -15,7 +15,9 @@ This repository is my portfolio for WDD 331R: Advanced CSS. Each week, I add new
 - [Unit 1 - Custom Properties and Nesting](unit-1/custom-properties/index.html)
 - [Unit 2 - Layered Components](unit-2/layered-components/index.html)
 - [Unit 4 - Editorial Grid Layout](unit-4/grid-layouts/editorial.html)
-- [Unit 4 - Responsive Card Grid](unit-4/grid-layouts/cards.html)
+- [Unit 4 - Card Grid with Subgrid](unit-4/grid-layouts/cards.html)
+- [Unit 4 - Container Queries](unit-4/advanced/container-demo.html)
+- [Unit 4 - Sticky Positioning](unit-4/advanced/sticky-demo.html)
 
 
 ## CSS Architecture

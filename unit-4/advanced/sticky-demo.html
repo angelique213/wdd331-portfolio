@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sticky Positioning | WDD 331R</title>
+
+    <!-- Shared theme script -->
+    <script src="../../js/theme-preference.js"></script>
+
+    <!-- Shared styles -->
+    <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="sticky-demo.css">
+</head>
+
+<body>
+    <header class="page-header">
+
+        <!-- Light and dark toggle -->
+        <button
+            class="simple-theme-toggle"
+            type="button"
+            aria-label="Switch theme"
+            aria-pressed="false"
+        >
+            <span class="theme-icon" aria-hidden="true">🌙</span>
+        </button>
+
+        <h1>Sticky Positioning</h1>
+        <p>Learning how elements stay visible while scrolling.</p>
+        <a href="../../index.html">Back to Home</a>
+    </header>
+
+    <main class="overflow-test">
+        <div class="sticky-bar">
+            <strong>Sticky Navigation</strong>
+            <span>Scroll down to see how I stay at the top!</span>
+        </div>
+
+        <section class="content-section">
+            <h2>What is Sticky Positioning?</h2>
+            <p>
+                Sticky positioning allows an element to stay in place
+                when you scroll past a certain point.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2>How Does It Work?</h2>
+            <p>
+                We use position: sticky and a top value in CSS.
+                The element behaves normally until it reaches
+                the specified position.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2>Why Is It Useful?</h2>
+            <p>
+                Sticky positioning is useful for navigation bars,
+                section headings, and other elements that should
+                remain visible while scrolling.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2>Keep Scrolling</h2>
+            <p>
+                Scroll down and watch the sticky navigation bar.
+                It should remain at the top of the screen.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2>Sticky and Overflow</h2>
+            <p>
+                Sometimes sticky positioning does not work because
+                a parent element has overflow: hidden.
+                We will test this problem and fix it.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2>End of the Demo</h2>
+            <p>
+                You have reached the end of the sticky positioning demo.
+            </p>
+        </section>
+    </main>
+</body>
+</html>

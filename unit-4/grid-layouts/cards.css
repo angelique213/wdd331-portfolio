@@ -114,6 +114,9 @@ body.articles-page {
     grid-template-columns:
         repeat(auto-fit, minmax(min(100%, 240px), 1fr));
 
+    grid-auto-rows: auto auto 1fr auto;
+
+    align-items: stretch;
     gap: var(--spacing-lg);
     width: 100%;
 }
@@ -121,8 +124,10 @@ body.articles-page {
 /* Cards */
 
 .articles-page .card {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-rows: subgrid;
+    grid-row: span 4;
+    row-gap: var(--spacing-md);
 
     min-width: 0;
     height: 100%;
@@ -176,21 +181,10 @@ body.articles-page {
     filter: brightness(1.08);
 }
 
-/* Card content */
-
-.articles-page .card > div {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-
-    min-width: 0;
-    padding-top: var(--spacing-lg);
-}
-
 /* Card title */
 
 .articles-page .card h2 {
-    margin: 0 0 12px;
+    margin: 0;
 
     color: var(--color-accent);
     font-size: 20px;
@@ -201,7 +195,7 @@ body.articles-page {
 /* Description */
 
 .articles-page .card p {
-    margin: 0 0 20px;
+    margin: 0;
 
     color: var(--color-text);
     font-size: 15px;
@@ -216,7 +210,7 @@ body.articles-page {
     justify-content: center;
 
     align-self: center;
-    margin-top: auto;
+    margin-top: 0;
 
     min-width: 130px;
     min-height: 42px;
@@ -307,5 +301,12 @@ body.articles-page {
     .articles-page .card:hover,
     .articles-page .card a:hover {
         transform: none;
+    }
+}
+
+/* Use regular grid rows if subgrid is not supported */
+@supports not (grid-template-rows: subgrid) {
+    .articles-page .card {
+        grid-template-rows: auto auto 1fr auto;
     }
 }
