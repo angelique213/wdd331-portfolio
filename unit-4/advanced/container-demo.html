@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Container Queries | WDD 331R</title>
+
+    <!-- Shared theme script -->
+    <script src="../../js/theme-preference.js"></script>
+
+    <!-- Shared styles -->
+    <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="container-demo.css">
+</head>
+
+<body>
+    <header>
+
+        <!-- Light and dark toggle -->
+        <button
+            class="simple-theme-toggle"
+            type="button"
+            aria-label="Switch theme"
+            aria-pressed="false"
+        >
+            <span class="theme-icon" aria-hidden="true">🌙</span>
+        </button>
+
+        <h1>Container Queries</h1>
+        <p>Components that change based on their container size.</p>
+        <a href="../../index.html">Back to Home</a>
+    </header>
+
+    <main>
+        <h2>Same Component, Different Sizes</h2>
+
+        <div class="demo-layout">
+
+            <!-- Narrow container -->
+            <aside class="narrow-container">
+                <h3>Narrow Container</h3>
+
+                <div class="component-wrapper">
+                    <article class="feature-card">
+                        <img
+                            src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600"
+                            alt="Laptop on a desk"
+                        >
+                        <div class="feature-content">
+                            <h4>Web Development</h4>
+                            <p>Learning HTML, CSS, and JavaScript.</p>
+                        </div>
+                    </article>
+                </div>
+            </aside>
+
+            <!-- Wide container -->
+            <section class="wide-container">
+                <h3>Wide Container</h3>
+
+                <div class="component-wrapper">
+                    <article class="feature-card">
+                        <img
+                            src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600"
+                            alt="Laptop on a desk"
+                        >
+                        <div class="feature-content">
+                            <h4>Web Development</h4>
+                            <p>Learning HTML, CSS, and JavaScript.</p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+        </div>
+    </main>
+</body>
+</html>
