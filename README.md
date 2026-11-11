@@ -1,3 +1,4 @@
+
 # WDD 331R Portfolio
 
 **Student:** Angelique Legaspi  
@@ -8,17 +9,17 @@
 
 This repository is my portfolio for WDD 331R: Advanced CSS. Each week, I add new pages and styles as I work through the course assignments.
 
-
 ## Pages
 
 - [Portfolio Home](https://angelique213.github.io/wdd331-portfolio/)
 - [Unit 1 - Custom Properties and Nesting](unit-1/custom-properties/index.html)
 - [Unit 2 - Layered Components](unit-2/layered-components/index.html)
+- [Unit 3 - Visual Effects](unit-3/visual-effects/index.html)
 - [Unit 4 - Editorial Grid Layout](unit-4/grid-layouts/editorial.html)
 - [Unit 4 - Card Grid with Subgrid](unit-4/grid-layouts/cards.html)
 - [Unit 4 - Container Queries](unit-4/advanced/container-demo.html)
 - [Unit 4 - Sticky Positioning](unit-4/advanced/sticky-demo.html)
-
+- Unit 5 - Typography Tokens and Web Fonts (Portfolio Update)
 
 ## CSS Architecture
 
@@ -36,6 +37,7 @@ css/
 │   └── layout.css
 ├── components/
 │   ├── cards.css
+│   ├── effects.css
 │   └── theme-toggle.css
 ├── utilities/
 │   └── utilities.css
@@ -103,3 +105,13 @@ dist/styles.css
 ```
 
 The original source CSS files remain in the `css/` folder so they are easier to organize and maintain.
+
+## Typography System
+
+For Unit 5, I updated my portfolio typography using a modular scale with a ratio of 1.25. Instead of using different font sizes throughout my CSS, I created reusable typography tokens in `css/tokens/variables.css`.
+
+I used `clamp()` for larger headings so the text can adjust based on the screen size. I also added semantic tokens for headings, body text, labels, and buttons to keep the typography consistent.
+
+For the fonts, I chose Playfair Display for headings and Inter for body text. I wanted the headings to stand out while keeping the paragraphs easy to read. Both fonts are loaded from Google Fonts using `display=swap`.
+
+The design is still similar to my original portfolio, but now it is easier to maintain. If I want to change a font size, I can update the token instead of changing several CSS files.

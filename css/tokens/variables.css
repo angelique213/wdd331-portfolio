@@ -1,11 +1,46 @@
 
 :root {
-    /* Typography */
+    /* Typography: Font Families */
     --font-family-sans: system-ui, sans-serif;
     --font-family-mono: monospace;
-    --font-size-sm: 1.4rem;
-    --font-size-md: 1.6rem;
-    --font-size-lg: 1.8rem;
+    --font-family-heading: "Playfair Display", Georgia, serif;
+    --font-family-body: "Inter", system-ui, sans-serif;
+
+    /* Modular Scale: Major Third (1.25) */
+    --type-ratio: 1.25;
+    --type-base: 1rem;
+
+    /* Scale Steps */
+    --font-size-xs: 0.64rem;
+    --font-size-sm: 0.8rem;
+    --font-size-md: 1rem;
+    --font-size-lg: 1.25rem;
+    --font-size-xl: clamp(1.25rem, 1.0714rem + 0.8929vw, 1.5625rem);
+    --font-size-2xl: clamp(1.5625rem, 1.3393rem + 1.1161vw, 1.953125rem);
+    --font-size-3xl: clamp(1.953125rem, 1.6741rem + 1.3951vw, 2.441406rem);
+    --font-size-4xl: clamp(2.441406rem, 2.0926rem + 1.744vw, 3.051758rem);
+
+    /* Semantic Typography Roles */
+    --font-size-caption: var(--font-size-xs);
+    --font-size-body: var(--font-size-md);
+    --font-size-heading-sm: var(--font-size-lg);
+    --font-size-heading-md: var(--font-size-xl);
+    --font-size-heading-lg: var(--font-size-2xl);
+    --font-size-display: var(--font-size-4xl);
+
+
+    /* Additional Typography Roles */
+    --font-size-label: var(--font-size-sm);
+    --font-size-supporting: var(--font-size-sm);
+    --font-size-card-body: var(--font-size-body);
+    --font-size-card-title: var(--font-size-heading-md);
+    --font-size-button: var(--font-size-sm);
+
+    /* Line Heights */
+    --line-height-body: 1.6;
+    --line-height-heading: 1.2;
+    --line-height-display: 1.1;
+
 
     /* Spacing */
     --spacing-xs: 4px;
@@ -44,7 +79,7 @@
     --effect-duration: 0.3s;
 
     /* Legacy tokens for existing CSS */
-    --font-family: var(--font-family-sans);
-    --font-size-base: 1rem;
+    --font-family: var(--font-family-body);
+    --font-size-base: var(--font-size-body);
     --border-radius: var(--radius-lg);
-}
+    }
