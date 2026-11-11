@@ -120,16 +120,16 @@ body.effects-page {
 }
 
 .effects-page .hero-content h1 {
-    font-size: clamp(2.5rem, 5vw, 4.5rem);
-    line-height: 1.1;
+    font-size: var(--font-size-display);
+    line-height: var(--line-height-display);
     margin-bottom: 18px;
     text-shadow: 0 2px 6px rgb(0 0 0 / 0.6);
 }
 
 .effects-page .hero-content p {
-    font-size: clamp(1rem, 1.8vw, 1.3rem);
+    font-size: var(--font-size-body);
     max-width: 550px;
-    line-height: 1.6;
+    line-height: var(--line-height-body);
 }
 
 /* Sections */
