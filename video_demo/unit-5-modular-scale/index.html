@@ -1,0 +1,441 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Modular Scale Tokens and Typographic Rhythm</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+<header class="hero">
+  <span class="eyebrow">WDD 331R | UNIT 5</span>
+  <h1>Modular Scale Tokens and Typographic Rhythm</h1>
+  <p>Creating consistent, responsive typography with CSS.</p>
+
+  <nav aria-label="Demo sections">
+    <a href="#part1">Modular Scale</a>
+    <a href="#part2">Ratio Slider</a>
+    <a href="#part3">CSS Math</a>
+    <a href="#part4">Fluid Typography</a>
+    <a href="#part5">Portfolio</a>
+  </nav>
+</header>
+
+<main>
+
+  <!-- PART 1 -->
+  <section class="section" id="part1">
+    <span class="part-tag">PART 01</span>
+    <h2>Understanding Modular Scales</h2>
+
+    <p>
+      A modular scale creates font sizes using a base size
+      and a ratio instead of choosing random values.
+    </p>
+
+    <div class="formula">
+      <div>
+        <span>Base Size</span>
+        <strong>16px</strong>
+      </div>
+      <div>
+        <span>Ratio</span>
+        <strong id="table-ratio">1.250</strong>
+      </div>
+    </div>
+
+    <h3>Calculated Font Sizes</h3>
+    <p>Each step is calculated using the same ratio.</p>
+
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr>
+            <th>Scale Step</th>
+            <th>Exponent</th>
+            <th>Font Size</th>
+            <th>Preview</th>
+          </tr>
+        </thead>
+        <tbody id="scale-table"></tbody>
+      </table>
+    </div>
+
+    <div class="note">
+      Example: 16 × 1.25 = 20px.
+      Multiplying by 1.25 again gives 25px.
+    </div>
+  </section>
+
+  <!-- PART 2 -->
+  <section class="section" id="part2">
+    <span class="part-tag">PART 02</span>
+    <h2>Interactive Ratio Demonstration</h2>
+
+    <p>
+      Changing one ratio updates the entire
+      typography scale automatically.
+    </p>
+
+    <div class="control-panel">
+      <div class="control-heading">
+        <label for="ratio-slider">Typography Ratio</label>
+        <output id="ratio-display" for="ratio-slider">1.250</output>
+      </div>
+
+      <input
+        id="ratio-slider"
+        type="range"
+        min="1.1"
+        max="1.6"
+        step="0.001"
+        value="1.25"
+      >
+
+      <div class="range-labels">
+        <span>Less contrast</span>
+        <span>More contrast</span>
+      </div>
+
+      <button id="reset-ratio" type="button">
+        Reset to 1.25
+      </button>
+    </div>
+
+    <div class="type-preview">
+      <p class="type-display">Display Heading</p>
+      <p class="type-heading">Section Heading</p>
+      <p class="type-subheading">Subsection Heading</p>
+      <p class="type-lead">Lead Paragraph</p>
+      <p class="type-body">Body text at the base size.</p>
+      <p class="type-small">Small supporting text.</p>
+    </div>
+
+    <h3>CSS Behind the Slider</h3>
+
+    <pre><code>:root {
+  --ratio: 1.25;
+  --base: 1rem;
+
+  --font-lg:
+    calc(var(--base) * pow(var(--ratio), 1));
+
+  --font-xl:
+    calc(var(--base) * pow(var(--ratio), 2));
+}</code></pre>
+
+    <div class="note">
+      JavaScript updates the --ratio variable.
+      CSS recalculates the preview using pow().
+    </div>
+  </section>
+
+  <!-- PART 3 -->
+  <section class="section" id="part3">
+    <span class="part-tag">PART 03</span>
+    <h2>CSS Math Functions</h2>
+
+    <p>
+      CSS math functions help calculate
+      font sizes from the modular scale.
+    </p>
+
+    <div class="math-grid">
+
+      <article class="math-card card-pink">
+        <h3>pow()</h3>
+        <p>Creates larger sizes by raising the ratio to a power.</p>
+        <pre><code>calc(1rem * pow(1.25, 2))</code></pre>
+        <strong>16 × 1.25 × 1.25 = 25px</strong>
+      </article>
+
+      <article class="math-card card-blue">
+        <h3>Negative Exponents</h3>
+        <p>Create sizes smaller than the base.</p>
+        <pre><code>calc(1rem * pow(1.25, -1))</code></pre>
+        <strong>16 ÷ 1.25 = 12.8px</strong>
+      </article>
+
+      <article class="math-card card-yellow">
+        <h3>round()</h3>
+        <p>Rounds a calculated value to a chosen interval.</p>
+        <pre><code>round(31.25px, 1px)</code></pre>
+        <strong>31.25px becomes 31px</strong>
+      </article>
+
+    </div>
+
+    <h3>Rounding Demonstration</h3>
+
+    <div class="rounding-panel">
+      <div>
+        <span>Calculated Size</span>
+        <strong id="unrounded">31.25px</strong>
+      </div>
+      <span class="arrow">→</span>
+      <div>
+        <span>Rounded Size</span>
+        <strong id="rounded">31px</strong>
+      </div>
+    </div>
+
+    <p class="caption">
+      These values also respond to the ratio slider in Part 2.
+    </p>
+  </section>
+
+  <!-- PART 4 -->
+  <section class="section" id="part4">
+    <span class="part-tag">PART 04</span>
+    <h2>Fluid Typography and Typographic Rhythm</h2>
+
+    <p>
+      Fluid typography allows font sizes to adjust
+      smoothly as the available width changes.
+    </p>
+
+    <h3>Using clamp()</h3>
+
+    <pre><code>:root {
+  --fluid-base:
+    clamp(1rem, 0.5rem + 2vw, 1.5rem);
+
+  --fluid-heading:
+    calc(var(--fluid-base) * pow(var(--ratio), 3));
+}</code></pre>
+
+    <p>
+      clamp() sets a minimum, preferred, and maximum size.
+      The base can change with the viewport width.
+    </p>
+
+    <h3>Responsive Typography Demonstration</h3>
+
+    <div class="responsive-demo">
+      <div class="control-heading">
+        <label for="width-slider">Preview Width</label>
+        <output id="preview-width-label" for="width-slider">
+          600px
+        </output>
+      </div>
+
+      <p>
+        Move the slider to resize the preview.
+        Notice how the heading changes size.
+      </p>
+
+      <input
+        id="width-slider"
+        type="range"
+        min="280"
+        max="900"
+        step="10"
+        value="600"
+      >
+
+      <div class="range-labels">
+        <span>280px — Narrow</span>
+        <span>900px — Wide</span>
+      </div>
+
+      <div class="preview-area">
+        <div class="resizable-preview" id="resizable-preview">
+          <span class="preview-label">LIVE RESPONSIVE PREVIEW</span>
+
+          <h4 class="responsive-heading">
+            Responsive Typography
+          </h4>
+
+          <p>
+            This heading changes size as
+            the preview width changes.
+          </p>
+        </div>
+      </div>
+
+      <p class="caption">
+        This interactive preview uses container-relative units
+        so the text responds to the preview width.
+      </p>
+    </div>
+
+    <div class="comparison-grid">
+      <article class="info-card card-yellow">
+        <h3>Fluid Base</h3>
+        <p>
+          A fluid base allows all computed
+          scale steps to change together.
+        </p>
+      </article>
+
+      <article class="info-card card-blue">
+        <h3>Individual clamp() Values</h3>
+        <p>
+          Each font size can have its own
+          minimum and maximum for more control.
+        </p>
+      </article>
+    </div>
+
+    <h3>Understanding Typographic Rhythm</h3>
+
+    <p>
+      Typographic rhythm means using consistent
+      line spacing and spacing between text blocks.
+    </p>
+
+    <div class="rhythm-example">
+      <h4>Readable Typography</h4>
+
+      <p>
+        This paragraph has comfortable line spacing
+        and a limited line length to make it easier to read.
+      </p>
+
+      <p>
+        The ch unit helps control line length,
+        while lh connects spacing to line height.
+      </p>
+    </div>
+
+    <pre><code>.rhythm-example {
+  max-width: 65ch;
+  line-height: 1.6;
+  margin-block: 1lh;
+}</code></pre>
+
+    <details class="bonus">
+      <summary>Additional Concept: Animating a Typed Ratio</summary>
+
+      <p>
+        Registering --ratio as a number with @property
+        allows the browser to interpolate it during transitions.
+      </p>
+
+      <pre><code>@property --ratio {
+  syntax: "&lt;number&gt;";
+  inherits: true;
+  initial-value: 1.25;
+}
+
+:root {
+  transition: --ratio 0.5s ease;
+}</code></pre>
+    </details>
+  </section>
+
+  <!-- PART 5 -->
+  <section class="section" id="part5">
+    <span class="part-tag">PART 05</span>
+    <h2>Portfolio Typography: Before and After</h2>
+
+    <p>
+      I applied a modular scale and reusable
+      typography tokens to my WDD 331R portfolio.
+    </p>
+
+    <div class="portfolio-grid">
+
+      <article class="portfolio-card">
+        <h3>Before</h3>
+        <p>
+          Font sizes were written directly
+          in different CSS rules.
+        </p>
+
+        <div class="portfolio-window">
+          <img
+            class="before-image"
+            src="images/portfolio-before.png"
+            alt="Original portfolio screenshot"
+          >
+        </div>
+
+        <h4>CSS Before</h4>
+        <pre><code>.hero h2 {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+}
+
+.site-footer {
+  font-size: 0.8rem;
+}</code></pre>
+      </article>
+
+      <article class="portfolio-card">
+        <h3>After</h3>
+        <p>
+          The updated portfolio uses shared
+          typography tokens and web fonts.
+        </p>
+
+        <div class="portfolio-window">
+          <iframe
+            title="Updated WDD 331R portfolio"
+            src="https://angelique213.github.io/wdd331-portfolio/"
+            loading="lazy">
+          </iframe>
+        </div>
+
+        <a
+          class="portfolio-link"
+          href="https://angelique213.github.io/wdd331-portfolio/"
+          target="_blank"
+          rel="noopener noreferrer">
+          Open Live Portfolio
+        </a>
+
+        <h4>CSS After</h4>
+        <pre><code>--font-size-display: var(--font-size-4xl);
+--font-size-body: var(--font-size-md);
+
+.hero h2 {
+  font-size: var(--font-size-display);
+  line-height: var(--line-height-display);
+}
+
+.site-footer {
+  font-size: var(--font-size-sm);
+}</code></pre>
+      </article>
+
+    </div>
+
+    <div class="note">
+      My portfolio uses a 1.25 modular scale with reusable
+      typography tokens. This demo also shows how CSS pow()
+      can compute the scale dynamically.
+    </div>
+  </section>
+
+  <section class="conclusion">
+    <h2>Key Takeaways</h2>
+    <p>
+      A modular scale creates consistent font sizes
+      from one base size and ratio.
+    </p>
+    <p>
+      CSS pow(), round(), and clamp() help create
+      flexible typography systems.
+    </p>
+    <p>
+      Reusable tokens improve consistency
+      and make CSS easier to maintain.
+    </p>
+  </section>
+
+</main>
+
+<footer>
+  WDD 331R | Modular Scale Tokens and Typographic Rhythm
+</footer>
+
+</body>
+</html>
