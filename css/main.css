@@ -14,3 +14,7 @@
 @import url("./components/effects.css") layer(components);
 
 @import url("./utilities/utilities.css") layer(utilities);
+
+@import url("./components/resume.css") layer(components);
+
+@import url("./components/contact.css") layer(components);

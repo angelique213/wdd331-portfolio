@@ -1,0 +1,463 @@
+
+:root {
+  --accent: #2563eb;
+  --thumb-size: 20px;
+  --focus-size: 3px;
+  --text: #222;
+  --border: #b9c1cb;
+  --surface: #fff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f3f4f6;
+  color: var(--text);
+  font: 16px/1.55 Arial, sans-serif;
+}
+
+.page {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 36px 20px 60px;
+}
+
+.page-header {
+  margin-bottom: 28px;
+}
+
+h1 {
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  margin: 0 0 8px;
+  line-height: 1.2;
+}
+
+h2 {
+  margin: 0 0 8px;
+  font-size: 1.5rem;
+}
+
+h3 {
+  margin: 0 0 12px;
+  font-size: 1.35rem;
+}
+
+h4 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+p {
+  margin: 0 0 18px;
+  color: #555;
+}
+
+.panel {
+  background: var(--surface);
+  padding: 28px;
+  border: 1px solid #ddd;
+  border-radius: 16px;
+  margin-bottom: 28px;
+}
+
+.panel-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.toggle-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.toggle-label input {
+  accent-color: var(--accent);
+  width: 18px;
+  height: 18px;
+}
+
+.settings {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr auto;
+  gap: 18px;
+  align-items: end;
+  background: #f6f7f8;
+  border-radius: 10px;
+  padding: 18px;
+  margin: 22px 0 26px;
+}
+
+.setting {
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+}
+
+.setting label {
+  font-size: .88rem;
+  font-weight: 700;
+}
+
+.setting input[type="color"] {
+  width: 70px;
+  height: 42px;
+  padding: 3px;
+  cursor: pointer;
+}
+
+.setting input[type="range"] {
+  width: 100%;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+
+.reset-button,
+#copy-code {
+  font: inherit;
+  padding: 9px 13px;
+  background: white;
+  border: 1px solid #bbb;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.demo-form {
+  max-width: 720px;
+  display: grid;
+  gap: 20px;
+}
+
+.field {
+  display: grid;
+  gap: 8px;
+}
+
+.field > label,
+.check-row {
+  font-weight: 700;
+}
+
+.check-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  cursor: pointer;
+}
+
+.keyboard-note {
+  margin: 22px 0 0;
+  font-size: .9rem;
+}
+
+.form-status {
+  margin: 0;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.form-status:empty {
+  display: none;
+}
+
+/* Compare the form with normal browser controls. */
+.demo-form:not(.styled) input,
+.demo-form:not(.styled) select,
+.demo-form:not(.styled) textarea,
+.demo-form:not(.styled) button {
+  font: revert;
+  color: revert;
+  background: revert;
+  border: revert;
+  border-radius: revert;
+  padding: revert;
+  box-shadow: revert;
+  appearance: auto;
+  accent-color: auto;
+  caret-color: auto;
+  outline: revert;
+}
+
+.demo-form:not(.styled) input[type="range"] {
+  width: auto;
+  height: auto;
+}
+
+/* Style the text fields, dropdown, and textarea. */
+.styled input[type="text"],
+.styled input[type="email"],
+.styled select,
+.styled textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: white;
+  color: var(--text);
+  font: inherit;
+}
+
+/* Change the blinking text cursor to blue. */
+.styled input[type="text"],
+.styled input[type="email"],
+.styled textarea {
+  caret-color: var(--accent);
+}
+
+.styled textarea {
+  resize: vertical;
+}
+
+/* Replace the dropdown's default arrow. */
+.styled select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%232563eb' d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 18px;
+  padding-right: 42px;
+  cursor: pointer;
+}
+
+/* Style the Choose File button. */
+.styled input[type="file"] {
+  max-width: 100%;
+  font: inherit;
+  color: var(--text);
+}
+
+.styled input[type="file"]::file-selector-button {
+  background: var(--accent);
+  color: white;
+  border: 0;
+  border-radius: 7px;
+  padding: 10px 14px;
+  margin-right: 12px;
+  font: inherit;
+  cursor: pointer;
+}
+
+/* Keep the checkbox native and change its color. */
+.styled input[type="checkbox"] {
+  accent-color: var(--accent);
+  width: 18px;
+  height: 18px;
+}
+
+/* Customize the range slider. */
+.styled input[type="range"] {
+  appearance: none;
+  width: 100%;
+  height: 36px;
+  background: transparent;
+  cursor: pointer;
+  margin: 0;
+}
+
+/* Chrome and Safari track */
+.styled input[type="range"]::-webkit-slider-runnable-track {
+  height: 6px;
+  background: #c4c4c4;
+  border-radius: 10px;
+}
+
+/* Firefox track */
+.styled input[type="range"]::-moz-range-track {
+  height: 6px;
+  background: #c4c4c4;
+  border-radius: 10px;
+}
+
+/* Chrome and Safari thumb */
+.styled input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  width: var(--thumb-size);
+  height: var(--thumb-size);
+  border-radius: 50%;
+  background: var(--accent);
+  border: 0;
+  margin-top: calc((6px - var(--thumb-size)) / 2);
+}
+
+/* Firefox thumb */
+.styled input[type="range"]::-moz-range-thumb {
+  width: var(--thumb-size);
+  height: var(--thumb-size);
+  border-radius: 50%;
+  background: var(--accent);
+  border: 0;
+}
+
+/* Show a clear outline during keyboard navigation. */
+.styled input:focus-visible,
+.styled select:focus-visible,
+.styled textarea:focus-visible,
+.styled button:focus-visible {
+  outline: var(--focus-size) solid var(--accent);
+  outline-offset: 3px;
+}
+
+.styled input[type="range"]:focus-visible::-webkit-slider-thumb {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.styled input[type="range"]:focus-visible::-moz-range-thumb {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* Submit button */
+.styled .submit-button {
+  background: var(--accent);
+  color: white;
+  border: 0;
+  border-radius: 8px;
+  padding: 12px 22px;
+  font: inherit;
+  cursor: pointer;
+}
+
+.styled .submit-button:hover,
+.styled input[type="file"]::file-selector-button:hover {
+  filter: brightness(.9);
+}
+
+/* Fallback styles for high-contrast mode. */
+@media (forced-colors: active) {
+  .styled select {
+    appearance: auto;
+    background-image: none;
+  }
+
+  .styled input[type="range"] {
+    appearance: auto;
+  }
+
+  .styled input[type="range"]::-webkit-slider-thumb {
+    appearance: auto;
+  }
+
+  .styled input:focus-visible,
+  .styled select:focus-visible,
+  .styled textarea:focus-visible,
+  .styled button:focus-visible {
+    outline-color: Highlight;
+  }
+
+  .styled input[type="file"]::file-selector-button,
+  .styled .submit-button {
+    border: 1px solid ButtonText;
+  }
+}
+
+/* CSS teaching examples */
+.examples-layout {
+  display: grid;
+  grid-template-columns: 255px minmax(0, 1fr);
+  gap: 24px;
+  margin-top: 26px;
+}
+
+.topic-nav {
+  display: grid;
+  gap: 8px;
+  align-content: start;
+}
+
+.topic-button {
+  text-align: left;
+  padding: 13px 12px;
+  border: 1px solid #d5d5d5;
+  background: #f6f6f6;
+  border-radius: 8px;
+  font: inherit;
+  cursor: pointer;
+}
+
+.topic-button.active {
+  background: #eff6ff;
+  border-color: var(--accent);
+  color: #1d4ed8;
+  font-weight: 700;
+  box-shadow: inset 4px 0 0 var(--accent);
+}
+
+.topic-button:focus-visible,
+.reset-button:focus-visible,
+#copy-code:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.topic-content {
+  min-width: 0;
+}
+
+.code-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin: 18px 0 10px;
+}
+
+pre {
+  background: #1f2937;
+  color: #e5edf9;
+  border-radius: 10px;
+  padding: 20px;
+  overflow-x: auto;
+  white-space: pre;
+  font: 14px/1.65 ui-monospace, SFMono-Regular, Consolas, monospace;
+}
+
+.try-box {
+  border-left: 4px solid var(--accent);
+  background: #f7f7f7;
+  padding: 14px 18px;
+  margin-top: 16px;
+}
+
+.try-box p {
+  margin: 5px 0 0;
+}
+
+.takeaways ul {
+  margin: 12px 0 0;
+  padding-left: 25px;
+}
+
+.takeaways li {
+  margin: 8px 0;
+}
+
+@media (max-width: 760px) {
+  .panel-heading {
+    flex-direction: column;
+  }
+
+  .settings {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .examples-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .page {
+    padding: 20px 12px 40px;
+  }
+
+  .panel {
+    padding: 20px;
+  }
+}
