@@ -1,0 +1,163 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Control Styling Beyond the Basics</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="page">
+    <header class="page-header">
+      <h1>Form Control Styling Beyond the Basics</h1>
+      <p>Compare native and custom form controls, then explore the CSS behind each change.</p>
+    </header>
+
+    <section class="panel" aria-labelledby="demo-heading">
+      <div class="panel-heading">
+        <div>
+          <h2 id="demo-heading">Live Form Demo</h2>
+          <p>Turn custom styling on or off to compare the controls.</p>
+        </div>
+        <label class="toggle-label" for="style-toggle">
+          <input type="checkbox" id="style-toggle" checked>
+          Custom styling
+        </label>
+      </div>
+
+      <div class="settings" aria-label="Demo settings">
+        <div class="setting">
+          <label for="accent-picker">Accent color</label>
+          <input id="accent-picker" type="color" value="#2563eb">
+        </div>
+
+        <div class="setting">
+          <label for="thumb-size">
+            Slider thumb size:
+            <output id="thumb-output" for="thumb-size">20px</output>
+          </label>
+          <input id="thumb-size" type="range" min="16" max="36" value="20">
+        </div>
+
+        <div class="setting">
+          <label for="focus-size">
+            Focus outline:
+            <output id="focus-output" for="focus-size">3px</output>
+          </label>
+          <input id="focus-size" type="range" min="2" max="6" value="3">
+        </div>
+
+        <button type="button" id="reset-settings" class="reset-button">
+          Reset settings
+        </button>
+      </div>
+
+      <form id="demo-form" class="demo-form styled" novalidate>
+        <div class="field">
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" placeholder="Enter your name">
+        </div>
+
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="Enter your email">
+        </div>
+
+        <div class="field">
+          <label for="project">Project Type</label>
+          <select id="project" name="project">
+            <option value="website">Website</option>
+            <option value="portfolio">Portfolio</option>
+            <option value="application">Web Application</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="priority">
+            Project Priority:
+            <output id="priority-output" for="priority">50</output>
+          </label>
+          <input id="priority" name="priority" type="range" min="0" max="100" value="50">
+        </div>
+
+        <div class="field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="4" placeholder="Write your message here"></textarea>
+        </div>
+
+        <div class="field">
+          <label for="attachment">Attach a file</label>
+          <input id="attachment" name="attachment" type="file">
+        </div>
+
+        <label class="check-row" for="updates">
+          <input id="updates" name="updates" type="checkbox">
+          Send me updates
+        </label>
+
+        <div>
+          <button class="submit-button" type="submit">Submit Demo</button>
+        </div>
+
+        <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+      </form>
+
+      <p class="keyboard-note">
+        Keyboard test: Press Tab to move between controls.
+        Use the arrow keys to adjust the priority slider.
+      </p>
+    </section>
+
+    <section class="panel" aria-labelledby="examples-heading">
+      <h2 id="examples-heading">CSS Teaching Examples</h2>
+      <p>
+        Choose a topic to see the CSS and an explanation.
+        All examples are on this page for easy recording.
+      </p>
+
+      <div class="examples-layout">
+        <nav class="topic-nav" aria-label="CSS topics">
+          <button class="topic-button active" type="button" data-topic="native" aria-pressed="true">1. Native-first styling</button>
+          <button class="topic-button" type="button" data-topic="appearance" aria-pressed="false">2. appearance: none</button>
+          <button class="topic-button" type="button" data-topic="select" aria-pressed="false">3. Select and file inputs</button>
+          <button class="topic-button" type="button" data-topic="caret" aria-pressed="false">4. caret-color</button>
+          <button class="topic-button" type="button" data-topic="focus" aria-pressed="false">5. :focus-visible</button>
+          <button class="topic-button" type="button" data-topic="range" aria-pressed="false">6. Range slider styling</button>
+          <button class="topic-button" type="button" data-topic="sizing" aria-pressed="false">7. field-sizing</button>
+          <button class="topic-button" type="button" data-topic="access" aria-pressed="false">8. Accessibility</button>
+        </nav>
+
+        <article class="topic-content" aria-live="polite">
+          <h3 id="topic-title">1. Native-first styling</h3>
+          <p id="topic-description"></p>
+
+          <div class="code-heading">
+            <h4>CSS Example</h4>
+            <button id="copy-code" type="button">Copy CSS</button>
+          </div>
+
+          <pre><code id="topic-code"></code></pre>
+
+          <div class="try-box">
+            <strong>Live demo:</strong>
+            <p id="topic-action"></p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel takeaways" aria-labelledby="takeaways-heading">
+      <h2 id="takeaways-heading">Key Takeaways</h2>
+      <ul>
+        <li>Keep native form controls when possible.</li>
+        <li>Use <code>accent-color</code> for easy color changes.</li>
+        <li>Use <code>appearance: none</code> only when extra styling is needed.</li>
+        <li>Keep focus outlines visible for keyboard users.</li>
+        <li>Test custom controls in different browsers and high-contrast settings.</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>
