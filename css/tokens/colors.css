@@ -86,10 +86,6 @@ html[data-theme="system"] {
         oklch(0.35 0.02 35)
     );
 
-    /* Header */
-    --header-bg: var(--color-accent);
-    --header-text: light-dark(#FFFFFF, #FFF8F0);
-
     /* Shadow */
     --shadow-color: light-dark(
         rgb(73 51 45 / 0.15),
