@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact | Angelique Legaspi</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="js/theme-preference.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body class="contact-page">
+
+    <header class="contact-header">
+        <a href="index.html">← Back to Portfolio</a>
+    </header>
+
+    <main class="contact-container">
+        <h1>Contact Me</h1>
+
+        <p class="contact-description">
+            Have a question or want to connect?
+            Feel free to leave a message below.
+        </p>
+
+        <form class="contact-form">
+
+            <div class="form-group">
+                <label for="contact-name">Name</label>
+                <input
+                    type="text"
+                    id="contact-name"
+                    name="name"
+                    autocomplete="name"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="contact-email">Email</label>
+                <input
+                    type="email"
+                    id="contact-email"
+                    name="email"
+                    autocomplete="email"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="contact-message">Message</label>
+                <textarea
+                    id="contact-message"
+                    name="message"
+                    rows="5"
+                    required
+                ></textarea>
+            </div>
+
+            <div class="checkbox-group">
+                <input
+                    type="checkbox"
+                    id="contact-updates"
+                    name="updates"
+                >
+                <label for="contact-updates">
+                    I would like to receive updates.
+                </label>
+            </div>
+
+            <p id="form-notice" class="form-notice">
+                This is a demo form for my CSS portfolio.
+                Messages are not sent.
+            </p>
+
+            <button type="button" class="contact-button">
+                Send Message (Demo)
+            </button>
+
+        </form>
+    </main>
+
+    <footer class="contact-footer">
+        <p>&copy; 2026 Angelique Legaspi</p>
+    </footer>
+
+</body>
+</html>

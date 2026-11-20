@@ -1,0 +1,125 @@
+
+/* Contact Page */
+
+.contact-page {
+    background: var(--color-bg);
+    color: var(--color-text);
+}
+
+.contact-header {
+    padding: var(--spacing-lg);
+}
+
+.contact-container {
+    max-width: 650px;
+    margin: var(--spacing-xl) auto;
+    padding: var(--spacing-xl);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+}
+
+.contact-container h1 {
+    text-align: center;
+    margin-bottom: var(--spacing-md);
+}
+
+.contact-description {
+    text-align: center;
+    color: var(--color-text-muted);
+    margin-bottom: var(--spacing-xl);
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    accent-color: var(--color-accent);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.form-group label {
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: var(--spacing-md);
+    font: inherit;
+    color: var(--color-text);
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+}
+
+.form-group textarea {
+    min-height: 120px;
+    max-height: 350px;
+    field-sizing: content;
+    resize: vertical;
+}
+
+.form-group input:focus-visible,
+.form-group textarea:focus-visible,
+.checkbox-group input:focus-visible,
+.contact-button:focus-visible {
+    outline: var(--outline-width) solid var(--color-accent);
+    outline-offset: 3px;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.checkbox-group input {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--color-accent);
+}
+
+.checkbox-group label {
+    cursor: pointer;
+}
+
+.form-notice {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+}
+
+.contact-button {
+    padding: var(--spacing-md);
+    border: none;
+    border-radius: var(--radius-md);
+    background: var(--color-accent);
+    color: var(--color-accent-text);
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.contact-button:hover {
+    background: var(--color-accent-hover);
+}
+
+.contact-footer {
+    text-align: center;
+    padding: var(--spacing-lg);
+    color: var(--color-text-muted);
+}
+
+@media (max-width: 600px) {
+    .contact-container {
+        margin: var(--spacing-md);
+        padding: var(--spacing-md);
+    }
+}
