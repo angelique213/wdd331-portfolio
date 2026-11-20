@@ -10,12 +10,44 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
     <script src="js/theme-preference.js"></script>
     <link rel="stylesheet" href="css/main.css">
+
+    <style>
+        /* Hide the full URLs on the website. */
+        .print-url {
+            display: none;
+        }
+
+        /* Show the full URLs only when printing. */
+        @media print {
+            .resume-contact {
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 4px 16px;
+                font-size: 10px;
+            }
+
+            .resume-contact a {
+                color: #222;
+                text-decoration: none;
+            }
+
+            .resume-contact .print-url {
+                display: inline;
+            }
+
+            .resume-contact .screen-label {
+                display: none;
+            }
+        }
+    </style>
 </head>
 
 <body class="resume-page">
 
     <header class="resume-site-header">
         <a href="index.html">← Back to Portfolio</a>
+
         <button type="button" onclick="window.print()" class="print-button">
             Print Resume
         </button>
@@ -23,26 +55,26 @@
 
     <main class="resume-container">
 
+        <div class="resume-heading">
+            <h1>Angelique Legaspi</h1>
+            <p>Software Engineering Student</p>
 
-    <div class="resume-heading">
-        <h1>Angelique Legaspi</h1>
-        <p>Software Engineering Student</p>
+            <div class="resume-contact">
+                <a href="https://github.com/angelique213"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    <span class="screen-label">GitHub</span>
+                    <span class="print-url">github.com/angelique213</span>
+                </a>
 
-        <div class="resume-contact">
-            <a href="https://github.com/angelique213"
-            target="_blank"
-            rel="noopener noreferrer">
-                GitHub
-            </a>
-
-            <a href="https://www.linkedin.com/in/angeliquelegaspi/"
-            target="_blank"
-            rel="noopener noreferrer">
-                LinkedIn
-            </a>
+                <a href="https://www.linkedin.com/in/angeliquelegaspi/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    <span class="screen-label">LinkedIn</span>
+                    <span class="print-url">linkedin.com/in/angeliquelegaspi/</span>
+                </a>
+            </div>
         </div>
-    </div>
-
 
         <section class="resume-section">
             <h2>Professional Summary</h2>
@@ -79,7 +111,6 @@
                 </ul>
             </div>
         </section>
-
 
         <section class="resume-section">
             <h2>Projects</h2>
